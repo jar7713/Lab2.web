@@ -1,0 +1,41 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+header {
+    min-height: 80px;
+    border-bottom: 1px solid #77CCEF;
+}
+h1 {
+    font-size: 24px;
+    color: #0F189F;
+    text-align: center;
+    padding: 20px 10px;
+}
+nav {
+    background: #20A759;
+    color: white;
+    padding: 10px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+nav a:hover {
+    background: #0B6B3A;
+}
+#intro {
+    background-color: #418fb1;
+    color: #fff;
+    padding: 20px;
+}
+.button {
+    padding: 10px 20px;
+    background-color: #E42A42;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.button:hover {
+    background-color: #d12a3a;
+}

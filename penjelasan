@@ -1,0 +1,61 @@
+1. Mengubah properti dan nilai CSS dari contoh di atas berdasarkan CSS Cheat Sheet bisa dilakukan seperti berikut:
+
+Sebelum:
+h1 {
+    font-size: 24px;
+    color: #0F189F;
+    text-align: center;
+    padding: 20px 10px;
+}
+Setelah (mengubah properti font-size, text-align, dan menambah background-color):
+h1 {
+    font-size: 32px; /* Ukuran font diperbesar */
+    color: #FF5733; /* Mengganti warna teks */
+    text-align: left; /* Mengubah posisi teks menjadi rata kiri */
+    padding: 30px 15px; /* Mengubah padding */
+    background-color: #F0E68C; /* Menambahkan warna latar */
+}
+Perubahan ini akan membuat teks heading (<h1>) lebih besar, berwarna oranye, dengan latar kuning dan posisi teks di rata kiri.
+
+2. Perbedaan Deklarasi CSS untuk Elemen h1 {...} dan #intro h1 {...}:
+h1 {...}: Mengatur semua elemen <h1> di dalam halaman. Artinya, jika ada beberapa elemen <h1> di halaman, semuanya akan mengikuti gaya yang ditentukan.
+#intro h1 {...}: Hanya mengatur elemen <h1> yang berada di dalam elemen dengan ID intro. Ini adalah deklarasi yang lebih spesifik. Misalnya, jika ada beberapa elemen <h1> di luar ID intro, mereka tidak akan terpengaruh oleh aturan ini.
+<h1>Heading Global</h1> <!-- Diatur oleh h1 {...} -->
+<div id="intro">
+    <h1>Heading di dalam Intro</h1> <!-- Diatur oleh #intro h1 {...} -->
+</div>
+
+3. Prioritas Antara Internal, Eksternal, dan Inline CSS:
+Jika terdapat internal, eksternal, dan inline CSS yang diterapkan pada elemen yang sama, prioritas CSS ditentukan oleh spesifisitas dan urutan. Berikut urutannya dari yang paling rendah hingga tinggi:
+
+Eksternal CSS (ditulis di file terpisah dan dirujuk dengan <link>).
+Internal CSS (ditulis di dalam tag <style> di dalam HTML).
+[23.14, 13/10/2024] Fajar: Inline CSS (ditulis langsung di elemen HTML menggunakan atribut style).
+Jika ada konflik antara ketiganya (misal, semua mengatur warna teks), inline CSS akan diutamakan karena memiliki spesifisitas tertinggi.
+
+Contoh:
+<head>
+    <style>
+        p { color: green; } /* Internal CSS */
+    </style>
+    <link rel="stylesheet" href="style_eksternal.css"> <!-- Eksternal CSS -->
+</head>
+<body>
+    <p style="color: red;">Teks ini merah.</p> <!-- Inline CSS -->
+</body>
+Hasil: Warna teks akan merah karena inline CSS memiliki prioritas tertinggi.
+
+4. Prioritas Antara ID dan Class Selector:
+Jika elemen HTML memiliki ID dan Class sekaligus, prioritas akan diberikan kepada ID selector karena ID memiliki spesifisitas lebih tinggi daripada Class.
+
+Contoh:
+<style>
+    #paragraf-1 {
+        color: blue; /* ID Selector */
+    }
+    .text-paragraf {
+        color: green; /* Class Selector */
+    }
+</style>
+<p id="paragraf-1" class="text-paragraf">Paragraf ini memiliki ID dan Class.</p>
+Hasil: Warna teks akan biru karena ID selector (#paragraf-1) memiliki prioritas lebih tinggi dibanding class selector (.text-paragraf).
